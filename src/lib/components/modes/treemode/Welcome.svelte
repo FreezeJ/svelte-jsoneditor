@@ -10,10 +10,10 @@
     Empty document
     {#if !readOnly}
       <ul>
-        <li>Click inside the editor</li>
-        <li>Paste clipboard data using <span class="jse-bold">Ctrl+V</span></li>
-        <li>Create a new object by typing <span class="jse-bold">&lbrace;</span></li>
-        <li>Create a new array by typing <span class="jse-bold">[</span></li>
+        <li>在编辑器内点击</li>
+        <li>使用<span class="jse-bold">Ctrl+V</span>粘贴剪切板的内容</li>
+        <li>输入<span class="jse-bold">&lbrace;</span>创建新对象</li>
+        <li>输入<span class="jse-bold">[</span>创建新数组</li>
       </ul>
     {/if}
   </div>

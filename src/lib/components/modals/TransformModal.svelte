@@ -192,14 +192,14 @@
       <div class="jse-main-contents">
         <div class="jse-query-contents">
           <div class="jse-label">
-            <div class="jse-label-inner">Language</div>
+            <div class="jse-label-inner">语言</div>
           </div>
           <div class="jse-description">
             {@html getSelectedQueryLanguage(queryLanguageId).description}
           </div>
 
           <div class="jse-label">
-            <div class="jse-label-inner">Path</div>
+            <div class="jse-label-inner">路径</div>
           </div>
           <input
             class="jse-path"
@@ -208,14 +208,14 @@
             title="Selected path"
             value={!isEmpty(rootPath)
               ? stripRootObject(stringifyJSONPath(rootPath))
-              : '(whole document)'}
+              : '(整个文档)'}
           />
 
           <div class="jse-label">
             <div class="jse-label-inner">
               <button type="button" on:click={toggleShowWizard}>
                 <Icon data={showWizard ? faCaretDown : faCaretRight} />
-                Wizard
+                说明
               </button>
             </div>
           </div>
@@ -223,12 +223,12 @@
             {#if Array.isArray(selectedJson)}
               <TransformWizard {queryOptions} json={selectedJson} onChange={updateQueryByWizard} />
             {:else}
-              (Only available for arrays, not for objects)
+              (仅对数组生效，对象无效)
             {/if}
           {/if}
 
           <div class="jse-label">
-            <div class="jse-label-inner">Query</div>
+            <div class="jse-label-inner">方法</div>
           </div>
           <textarea
             class="jse-query"
@@ -243,7 +243,7 @@
               <div class="jse-label-inner">
                 <button type="button" on:click={toggleShowOriginal}>
                   <Icon data={showOriginal ? faCaretDown : faCaretRight} />
-                  Original
+                  源数据
                 </button>
               </div>
             </div>
@@ -277,7 +277,7 @@
           </div>
           <div class="jse-preview-data">
             <div class="jse-label">
-              <div class="jse-label-inner">Preview</div>
+              <div class="jse-label-inner">预览结果</div>
             </div>
             {#if !previewError}
               <TreeMode
@@ -322,7 +322,7 @@
           use:focus
           disabled={!!previewError}
         >
-          Transform
+          转换
         </button>
       </div>
     </div>

@@ -32,11 +32,11 @@
 
   const asc = {
     value: 1,
-    label: 'ascending'
+    label: '降序'
   }
   const desc = {
     value: -1,
-    label: 'descending'
+    label: '升序'
   }
   const directions = [asc, desc]
 
@@ -85,7 +85,7 @@
 </script>
 
 <div class="jse-modal jse-sort">
-  <Header title={jsonIsArray ? 'Sort array items' : 'Sort object keys'} />
+  <Header title={jsonIsArray ? '数组排序' : '对象排序'} />
 
   <div class="jse-modal-contents">
     <table>
@@ -95,16 +95,16 @@
       </colgroup>
       <tbody>
         <tr>
-          <th>Path</th>
+          <th>节点</th>
           <td>
             <input
               class="jse-path"
               type="text"
               readonly
-              title="Selected path"
+              title="选择的节点"
               value={!isEmpty(rootPath)
                 ? stripRootObject(stringifyJSONPath(rootPath))
-                : '(whole document)'}
+                : '(整个文档)'}
             />
           </td>
         </tr>
@@ -117,7 +117,7 @@
           </tr>
         {/if}
         <tr>
-          <th>Direction</th>
+          <th>排序</th>
           <td>
             <Select
               showChevron
@@ -146,7 +146,7 @@
         use:focus
         disabled={jsonIsArray ? !selectedProperty : false}
       >
-        Sort
+        排序
       </button>
     </div>
   </div>

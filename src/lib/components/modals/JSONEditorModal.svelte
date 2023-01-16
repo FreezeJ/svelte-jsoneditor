@@ -74,7 +74,7 @@
   $: absolutePath = stack.flatMap((state) => state.relativePath)
   $: pathDescription = !isEmpty(absolutePath)
     ? stripRootObject(stringifyJSONPath(absolutePath))
-    : '(whole document)'
+    : '(整个文档)'
 
   // not relevant in this Modal setting, but well
   $: parseMemoizeOne = memoizeOne(parser.parse)
@@ -183,18 +183,18 @@
 
 <div class="jse-modal jse-jsoneditor-modal">
   <Header
-    title="Edit nested content {stack.length > 1 ? ` (${stack.length})` : ''}"
+    title="编辑嵌套内容{stack.length > 1 ? ` (${stack.length})` : ''}"
     onClose={handleClose}
   />
 
   <div class="jse-modal-contents">
     <div class="jse-label">
-      <div class="jse-label-inner">Path</div>
+      <div class="jse-label-inner">键</div>
     </div>
-    <input class="jse-path" type="text" readonly title="Selected path" value={pathDescription} />
+    <input class="jse-path" type="text" readonly title="选择路径" value={pathDescription} />
 
     <div class="jse-label">
-      <div class="jse-label-inner">Contents</div>
+      <div class="jse-label-inner">值</div>
     </div>
 
     <div class="jse-modal-inline-editor">
@@ -242,9 +242,9 @@
         </button>
       {/if}
       {#if !readOnly}
-        <button type="button" class="jse-primary" on:click={handleApply} use:focus> Apply </button>
+        <button type="button" class="jse-primary" on:click={handleApply} use:focus> 应用 </button>
       {:else}
-        <button type="button" class="jse-primary" on:click={handleClose} use:focus> Close </button>
+        <button type="button" class="jse-primary" on:click={handleClose} use:focus> 关闭 </button>
       {/if}
     </div>
   </div>

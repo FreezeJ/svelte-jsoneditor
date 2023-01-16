@@ -133,7 +133,7 @@
         <button
           type="button"
           class="jse-replace-toggle"
-          title="Toggle visibility of replace options (Ctrl+H)"
+          title="切换选项可见性 (Ctrl+H)"
           on:click={toggleShowReplace}
         >
           <Icon data={showReplace ? faCaretDown : faCaretRight} />
@@ -151,7 +151,7 @@
           <label class="jse-search-input-label" about="jse-search input">
             <input
               class="jse-search-input"
-              title="Enter text to search"
+              title="输入内容进行搜索"
               type="text"
               placeholder="Find"
               bind:value={text}
@@ -164,7 +164,7 @@
           <button
             type="button"
             class="jse-search-next"
-            title="Go to next search result (Enter)"
+            title="跳到下一个匹配的搜索结果 (Enter)"
             on:click={() => onNext()}
           >
             <Icon data={faChevronDown} />
@@ -172,7 +172,7 @@
           <button
             type="button"
             class="jse-search-previous"
-            title="Go to previous search result (Shift+Enter)"
+            title="跳到上一个匹配的搜索结果 (Shift+Enter)"
             on:click={() => onPrevious()}
           >
             <Icon data={faChevronUp} />
@@ -180,7 +180,7 @@
           <button
             type="button"
             class="jse-search-clear"
-            title="Close search box (Esc)"
+            title="关闭搜索框 (Esc)"
             on:click={() => onClose()}
           >
             <Icon data={faTimes} />
@@ -190,17 +190,17 @@
           <div class="jse-replace-section">
             <input
               class="jse-replace-input"
-              title="Enter replacement text"
+              title="输入替换的内容"
               type="text"
               placeholder="Replace"
               bind:value={replaceText}
             />
             <button
               type="button"
-              title="Replace current occurrence (Ctrl+Enter)"
+              title="替换当前选择内容 (Ctrl+Enter)"
               on:click={handleReplace}>Replace</button
             >
-            <button type="button" title="Replace all occurrences" on:click={handleReplaceAll}
+            <button type="button" title="替换所有内容" on:click={handleReplaceAll}
               >All</button
             >
           </div>

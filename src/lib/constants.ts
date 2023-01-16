@@ -45,16 +45,16 @@ export const JSONEDITOR_MODAL_OPTIONS = {
 }
 
 export const INSERT_EXPLANATION =
-  'Insert or paste contents, ' +
-  'enter [ insert a new array, ' +
-  'enter { to insert a new object, ' +
-  'or start typing to insert a new value'
+  '插入或复制内容, ' +
+  '输入 [ 插入一个新的数组, ' +
+  '输入 { 插入一个新的对象, ' +
+  '或者直接输入一个新的值'
 
 export const CONTEXT_MENU_EXPLANATION =
-  'Open context menu ' +
-  '(Click here, ' +
-  'right click on the selection, ' +
-  'or use the context menu button or Ctrl+Q)'
+  '打开上下文菜单 ' +
+  '(点击这里, ' +
+  '右键点击选择内容, ' +
+  '或者使用上下文菜单按钮或Ctrl+Q)'
 
 export const HOVER_INSERT_INSIDE = 'hover-insert-inside'
 export const HOVER_INSERT_AFTER = 'hover-insert-after'
@@ -76,6 +76,6 @@ export const UPDATE_SELECTION = {
 }
 
 export const SORT_DIRECTION_NAMES = {
-  [SortDirection.asc]: 'ascending',
-  [SortDirection.desc]: 'descending'
+  [SortDirection.asc]: '升序',
+  [SortDirection.desc]: '降序'
 }

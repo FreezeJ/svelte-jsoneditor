@@ -39,10 +39,10 @@
   $: rootSelected = hasSelection && isEmpty(selection.focusPath)
   $: focusValue = hasSelection ? getIn(json, selection.focusPath) : undefined
   $: editValueText = Array.isArray(focusValue)
-    ? 'Edit array'
+    ? '编辑数组'
     : isObject(focusValue)
-    ? 'Edit object'
-    : 'Edit value'
+    ? '编辑对象'
+    : '编辑值'
 
   $: hasSelectionContents =
     hasJson &&
@@ -144,7 +144,7 @@
                 onClick: handleEditValue,
                 icon: faPen,
                 text: editValueText,
-                title: 'Edit the value (Double-click on the value)',
+                title: '编辑值 (双击编辑该值)',
                 disabled: !canEditValue
               },
               width: '11em',
@@ -153,15 +153,15 @@
                   type: 'button',
                   icon: faPen,
                   text: editValueText,
-                  title: 'Edit the value (Double-click on the value)',
+                  title: '编辑值 (双击编辑该值)',
                   onClick: handleEditValue,
                   disabled: !canEditValue
                 },
                 {
                   type: 'button',
                   icon: enforceString ? faCheckSquare : faSquare,
-                  text: 'Enforce string',
-                  title: 'Enforce keeping the value as string when it contains a numeric value',
+                  text: '转换为字符串',
+                  title: '把数字类型转换为字符串',
                   onClick: handleToggleEnforceString,
                   disabled: !canEnforceString
                 }
@@ -175,8 +175,8 @@
                 type: 'button',
                 onClick: handleCut,
                 icon: faCut,
-                text: 'Cut',
-                title: 'Cut selected contents, formatted with indentation (Ctrl+X)',
+                text: '剪切',
+                title: '剪切选择内容，并格式化 (Ctrl+X)',
                 disabled: !hasSelectionContents
               },
               width: '10em',
@@ -184,16 +184,16 @@
                 {
                   type: 'button',
                   icon: faCut,
-                  text: 'Cut formatted',
-                  title: 'Cut selected contents, formatted with indentation (Ctrl+X)',
+                  text: '格式化剪切',
+                  title: '剪切选择内容，并格式化 (Ctrl+X)',
                   onClick: handleCut,
                   disabled: !hasSelectionContents
                 },
                 {
                   type: 'button',
                   icon: faCut,
-                  text: 'Cut compacted',
-                  title: 'Cut selected contents, without indentation (Ctrl+Shift+X)',
+                  text: '压缩剪切',
+                  title: '剪切选择内容，去除空格 (Ctrl+Shift+X)',
                   onClick: handleCutCompact,
                   disabled: !hasSelectionContents
                 }
@@ -205,8 +205,8 @@
                 type: 'button',
                 onClick: handleCopy,
                 icon: faCopy,
-                text: 'Copy',
-                title: 'Copy selected contents, formatted with indentation (Ctrl+C)',
+                text: '复制',
+                title: '复制选择内容，并格式化 (Ctrl+C)',
                 disabled: !hasSelectionContents
               },
               width: '12em',
@@ -214,16 +214,16 @@
                 {
                   type: 'button',
                   icon: faCopy,
-                  text: 'Copy formatted',
-                  title: 'Copy selected contents, formatted with indentation (Ctrl+C)',
+                  text: '格式化复制',
+                  title: '复制选择内容，并格式化 (Ctrl+C)',
                   onClick: handleCopy,
                   disabled: !hasSelectionContents
                 },
                 {
                   type: 'button',
                   icon: faCopy,
-                  text: 'Copy compacted',
-                  title: 'Copy selected contents, without indentation (Ctrl+Shift+C)',
+                  text: '压缩复制',
+                  title: '复制选择内容，去除空格 (Ctrl+Shift+C)',
                   onClick: handleCopyCompact,
                   disabled: !hasSelectionContents
                 }
@@ -233,8 +233,8 @@
               type: 'button',
               onClick: handlePaste,
               icon: faPaste,
-              text: 'Paste',
-              title: 'Paste clipboard contents (Ctrl+V)',
+              text: '粘贴',
+              title: '粘贴剪贴板内容 (Ctrl+V)',
               disabled: !hasSelection
             },
             { type: 'separator' },
@@ -242,8 +242,8 @@
               type: 'button',
               onClick: handleRemove,
               icon: faTimes,
-              text: 'Remove',
-              title: 'Remove selected contents (Delete)',
+              text: '删除',
+              title: '删除所选内容 (Delete)',
               disabled: !hasSelectionContents
             }
           ]
@@ -255,5 +255,5 @@
 
 <ContextMenu
   {items}
-  tip={showTip ? 'Tip: you can open this context menu via right-click or with Ctrl+Q' : undefined}
+  tip={showTip ? '提示: 你可以通过右键或者Ctrl+Q打开这个菜单' : undefined}
 />

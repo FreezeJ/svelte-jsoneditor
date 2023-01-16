@@ -6,7 +6,7 @@
   /* (at Mac this font looks too large at 14px, but 13px is too small for the font on Windows) */
   --jse-font-family-mono: consolas, menlo, monaco, 'Ubuntu Mono', 'source-code-pro', monospace;
   --jse-font-size-mono: 14px;
-  --jse-font-size: 16px;
+  --jse-font-size: 14px;
   --jse-font-size-text-mode-search: 80%;
   --jse-line-height: calc(1em + 4px);
   --jse-indent-size: calc(1em + 4px);

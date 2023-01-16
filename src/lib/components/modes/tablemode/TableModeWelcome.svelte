@@ -16,7 +16,7 @@
   export let openJSONEditorModal: (path: JSONPath) => void
   export let onChangeMode: OnChangeMode
 
-  $: action = readOnly ? 'View' : 'Edit'
+  $: action = readOnly ? '查看' : '编辑'
 
   let nestedArrayPaths: JSONPath[]
   $: nestedArrayPaths = json
@@ -27,13 +27,13 @@
   $: hasNestedArrays = !isEmpty(nestedArrayPaths)
 
   $: documentType = hasNestedArrays
-    ? 'Object with nested arrays'
+    ? '具有嵌套数组的对象'
     : json === undefined && (text === '' || text === undefined)
-    ? 'An empty document'
+    ? '一个空文档'
     : isJSONObject(json)
-    ? 'An object'
+    ? '一个对象'
     : isJSONArray(json)
-    ? 'An empty array' // note: can also be an array with objects but without properties
+    ? '一个空数组' // note: can also be an array with objects but without properties
     : `A ${valueType(json, parser)}`
 </script>
 
@@ -44,10 +44,9 @@
     <div class="jse-nested-arrays-title">{documentType}</div>
     <div class="jse-nested-arrays-info">
       {#if hasNestedArrays}
-        An object cannot be opened in table mode. You can open a nested array instead, or open the
-        document in tree mode.
+        对象不能使用表格模式。您可以改为打开嵌套数组，或以树模式打开文档。
       {:else}
-        {documentType} cannot be opened in table mode. You can open the document in tree mode instead.
+        {documentType}不能使用表格模式。您可以改为打开嵌套数组，或以树模式打开文档。
       {/if}
     </div>
     {#each nestedArrayPaths as nestedArrayPath}
@@ -63,7 +62,7 @@
       </button>
     {/each}
     <button type="button" class="jse-nested-array-action" on:click={() => onChangeMode(Mode.tree)}>
-      {action} in tree mode
+      使用树模式{action}
     </button>
   </div>
 
